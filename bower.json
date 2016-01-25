@@ -19,7 +19,7 @@
     "jquery": "latest",
     "normalize-css": "latest",
     "isotope": "latest",
-    "Swipe": "latest",
+    "swiper": "latest",
     "jquery-validation": "latest",
     "bootstrap": "latest"
   },

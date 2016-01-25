@@ -28,23 +28,43 @@ h5{
 	font-size: $font-size-h5;
 }
 
+
+.btn_st-1{
+	border: 2px solid $color-st-1;
+	background-color: transparent;
+	transition: all .3s;
+	text-transform: uppercase;
+	color: #0d0d0d;
+	font-weight: 500;
+	border-radius: 0;
+	&:hover{
+		color: #fff;
+		background-color: $color-st-1;
+	}
+
+}
+
+
+
+
 .main-header{
 	position: absolute;
-	top: 85px;
+	top: rem(85px);
 	left: 0;
 	right: 0;
+	z-index: 100;
 }
 .main-header__logo{
 	float: left;
 	width: rem(150px);
 	height: rem(150px);
 	border-radius: 50%;
-	border: 1px solid;
+	border: 1px solid #fff;
 	text-align: center;
 	h1{
 		margin: 0;
 		font-size: rem(45px);
-		// color: #fff;
+		color: #fff;
 		line-height: rem(150px);
 		font-family: Montserrat;
 		font-weight: bold;
@@ -58,8 +78,9 @@ h5{
 		display: inline-block;
 		vertical-align: middle;
 		&:not(:last-child):after{
+			color: #fff;
 			content: "\\\\";
-			padding: 0 rem(40px);
+			padding: 0 rem(35px);
 		}
 	}
 	a{
@@ -68,8 +89,76 @@ h5{
 		text-decoration: none;
 		transition: all .3s;
 		font-weight: 600;
+		color: #fff;
 		&:hover{
 			color: #0d0d0d;
 		}
+	}
+}
+
+.section{
+	position: relative;
+}
+
+.section-banner{
+	background: #fff url(../img/bg-banner.jpg) center no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	min-height: 1100px;
+
+	height: 100vh;
+
+	color: #fff;
+
+	&:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #34495e;
+		opacity: .7;
+	}
+	.container{
+		position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+	}
+	.swiper-slide{
+		text-align: center;
+	}
+	.swiper-text{
+		text-transform: uppercase;
+		color: #fff;
+		margin-bottom: rem(80px);
+	}
+	.swiper-text_lg{
+		font-size: rem(68px);
+		font-weight: 700;
+		line-height: rem(80px);
+		letter-spacing: -3px;
+	}
+	.swiper-text_md{
+		font-size: rem(45px);
+		font-weight: 300;
+		line-height: rem(65px);
+	}
+	.swiper-text_sm{
+		font-size: rem(40px);
+		font-weight: 300;
+		line-height: rem(60px);
+	}
+	.swiper-pagination{
+    left: 0;
+    right: 0;
+    bottom: -130px;
+	}
+	.btn_st-1{
+		font-size: rem(15px);
+		padding: rem(9px) rem(30px);
+		color: #fff;
 	}
 }
