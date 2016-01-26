@@ -12,6 +12,13 @@ body{
 	color: $body-color;
 	overflow-x: hidden;
 }
+h1,h2,h3{
+	text-transform: uppercase;
+}
+h2,h3{
+	color: $gray-dark;
+	font-weight: 700;
+}
 h1{
 	font-size: $font-size-h1;
 }
@@ -34,16 +41,95 @@ h5{
 	background-color: transparent;
 	transition: all .3s;
 	text-transform: uppercase;
-	color: #0d0d0d;
+	color: $gray-dark;
 	font-weight: 500;
 	border-radius: 0;
 	&:hover{
 		color: #fff;
 		background-color: $color-st-1;
 	}
-
 }
 
+/**
+ *
+ * Block section
+ *
+ */
+.section{
+	position: relative;
+	padding: rem(100px) 0;
+	&:after{
+		content: "";
+		width: 108%;
+		height: 100%;
+		background-color: #fff;
+		position: absolute;
+		bottom: -100%;
+		transform: rotate(-4.25deg);
+		transform-origin: left;
+	}
+}
+
+/**
+ *
+ * Block shape-icon - circle-icon
+ *
+ */
+.shape-icon{
+	border-radius: 50%;
+	border: 2px solid $color-st-1;
+	display: inline-block;
+	width: rem(125px);
+	height: rem(125px);
+	text-align: center;
+	background-color: transparent;
+	line-height: rem(125px);
+	font-size: rem(40px);
+	color: $gray-dark;
+}
+
+/**
+ *
+ * Разделитель - горизонтальная линия
+ *
+ */
+.section-spacer{
+	margin: 0;
+	border-top: 2px solid #e6e6e6;
+}
+
+
+
+/**
+ *
+ * secion-header
+ *
+ */
+.secton-header_line{
+	margin: auto;
+	width: 91%;
+	h2,
+	span{
+		display: table-cell;
+		vertical-align: middle;
+		text-transform: uppercase;
+	}
+	h2{
+		margin: 0;
+		font-size: rem(30px);
+		font-weight: 700;
+		line-height: rem(25px);
+		border-right: 4px solid $color-st-1;
+		padding-right: rem(20px);
+	}
+	span{
+		color: #4d4d4d;
+		padding-left: rem(20px);
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: rem(25px);
+	}
+}
 
 
 
@@ -68,7 +154,6 @@ h5{
 		line-height: rem(150px);
 		font-family: Montserrat;
 		font-weight: bold;
-		text-transform: uppercase;
 	}
 }
 
@@ -91,14 +176,17 @@ h5{
 		font-weight: 600;
 		color: #fff;
 		&:hover{
-			color: #0d0d0d;
+			color: $gray-dark;
 		}
 	}
 }
 
-.section{
-	position: relative;
-}
+
+
+
+/*======================================
+=            Section banner            =
+======================================*/
 
 .section-banner{
 	background: #fff url(../img/bg-banner.jpg) center no-repeat;
@@ -109,23 +197,9 @@ h5{
 	height: 100vh;
 
 	color: #fff;
-
-	&:before{
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #34495e;
-		opacity: .7;
-	}
+	@include overlay(#34495e, .7);
 	.container{
-		position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+		@include vert-align;
 	}
 	.swiper-slide{
 		text-align: center;
@@ -156,9 +230,205 @@ h5{
     right: 0;
     bottom: -130px;
 	}
+	.swiper-pagination-bullet{
+    width: 12px;
+    height: 12px;
+    margin: 0 2.5px;
+    background: #626e79;
+  }
+  .swiper-pagination-bullet-active{
+  	background: #fff;
+  }
+
 	.btn_st-1{
 		font-size: rem(15px);
 		padding: rem(9px) rem(30px);
 		color: #fff;
 	}
 }
+
+/*=====  End of Section banner  ======*/
+
+
+
+
+/*=============================================
+=            Section comment ABOUT            =
+=============================================*/
+
+.section-about{}
+
+.section-about__wrapper{
+	margin-top: rem(135px);
+}
+
+.section-about__icon,
+.section-about__text{
+	display: inline-block;
+	vertical-align: top;
+}
+
+$section-about__icon: rem(125px);
+.section-about__icon{
+	width: $section-about__icon;
+}
+
+.section-about__text{
+	padding-left: rem(30px);
+	width: calc(100% - #{$section-about__icon});
+	h3{
+		margin: 0 0 1rem;
+	}
+	.text-style{
+			color: #e74c3c;
+			font-size: rem(20px);
+			line-height: rem(28px);
+			font-weight: 300;
+			margin-bottom: 1.5rem;
+	}
+}
+
+
+.section-about__story{
+	margin-bottom: rem(115px);
+	img{
+		max-width: 450px;
+		width: 100%;
+		height: auto;
+	}
+}
+
+.section-about__skills{
+	margin-top: rem(125px);
+	img{
+		max-width: 497px;
+		width: 100%;
+		height: auto;
+	}
+}
+.section-about__progress-bar{
+	margin-top: rem(50px);
+}
+
+.progress-bar__item{
+	margin-bottom: rem(33px);
+}
+.progress-bar__text{
+	margin-bottom: rem(5px);
+	text-transform: uppercase;
+	.title{
+		color: $gray-dark;
+		font-weight: 600;
+	}
+	.separ{
+		color: #bfbfbf;
+		font-weight: 600;
+	}
+	.num{
+		color: $gray-dark;
+		font-weight: 300;
+	}
+}
+.progress-bar__skills{
+		height: rem(10px);
+		background-image: linear-gradient(to right, #f39c12 0%, #f39c12 88%, #e6e6e6 88%, #e6e6e6 100%);
+	}
+/*=====  End of Section comment ABOUT  ======*/
+
+
+/*=====================================
+=            Section QUOTE            =
+=====================================*/
+
+.section-quote{
+	background: #fff url(../img/bg2.jpg) center no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	min-height: rem(700px);
+	@include overlay(#000, .75);
+	.container{
+		@include vert-align;
+	}
+}
+.section-quote__content{
+	text-align: center;
+}
+.section-quote__text{
+	color: #fff;
+	font-size: rem(45px);
+	font-weight: 700;
+	line-height: rem(60px);
+
+	&:after{
+		content: "";
+		display: block;
+    margin: auto;
+		margin-top: rem(30px);
+		width: rem(50px);
+		height: rem(4px);
+		background-color: $color-st-1;
+	}
+}
+.section-quote__quote{
+	color: #fff;
+	font-size: rem(110px);
+	font-weight: 700;
+	position: relative;
+	top: 20px;
+}
+.section-quote__fio{
+	color: #fff;
+	font-size: rem(24px);
+	font-weight: 700;
+	line-height: rem(40px);
+	text-transform: uppercase;
+}
+/*=====  End of Section QUOTE  ======*/
+
+
+/*============================================
+=            Section comment TEAM            =
+============================================*/
+.section-team__grid{
+	margin-top: rem(170px);
+	text-align: center;
+	img{
+		border-radius: 50%;
+		max-width: 188px;
+		display: inline-block;
+		margin-bottom: rem(20px);
+	}
+}
+.section-team__text{
+	.fio{
+		margin: 0;
+		color: $gray-dark;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	.position{
+		color: #999;
+		font-family: Lato;
+		font-size: rem(15px);
+		font-weight: 400;
+		&:after{
+			content: "";
+			display: block;
+			margin: rem(10px) auto;
+			width: rem(20px);
+			height: rem(4px);
+			background-color: #ccc;
+		}
+	}
+	.descr{
+		margin-bottom: rem(20px);
+	}
+	.social{
+		color: #999;
+	}
+	.icon{
+		font-size: rem(21px);
+	}
+}
+
+/*=====  End of Section comment TEAM  ======*/

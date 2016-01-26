@@ -3,6 +3,29 @@
     @return ($px / $base) * 1rem;
 }
 
+/* Выравнивание по вертикали */
+@mixin vert-align{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/* Затемнение фона */
+@mixin overlay($bgc, $opacity){
+	&:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $bgc;
+    opacity: $opacity;
+  }
+}
+
 @mixin clearfix() {
   &::after {
     content: "";
