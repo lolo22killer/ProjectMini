@@ -390,13 +390,29 @@ $section-about__icon: rem(125px);
 =            Section comment TEAM            =
 ============================================*/
 .section-team__grid{
-	margin-top: rem(170px);
+	margin-top: rem(150px);
 	text-align: center;
+}
+.section-team__grid-item{
+	padding: rem(30px) rem(15px);
+	border-top: 4px solid transparent;
+	transition: all .3s;
+	&:hover{
+		background-color: #f0f0f0;
+		border-color: $color-st-1;
+		& .position:after{
+			background-color: #e74c3c;
+		}
+	}
 	img{
 		border-radius: 50%;
 		max-width: 188px;
 		display: inline-block;
 		margin-bottom: rem(20px);
+		border: 1px solid;
+    padding: 5px;
+  	background-color: #f2f2f2;
+    border: 1px solid #e6e6e6;
 	}
 }
 .section-team__text{
@@ -427,7 +443,11 @@ $section-about__icon: rem(125px);
 		color: #999;
 	}
 	.icon{
+		cursor: pointer;
 		font-size: rem(21px);
+		&:hover{
+			color: $color-st-1;
+		}
 	}
 }
 
