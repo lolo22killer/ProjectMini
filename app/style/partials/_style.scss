@@ -37,6 +37,8 @@ h5{
 
 
 .btn_st-1{
+	text-decoration: none;
+	display: inline-block;
 	border: 2px solid $color-st-1;
 	background-color: transparent;
 	transition: all .3s;
@@ -93,8 +95,8 @@ h5{
  * Разделитель - горизонтальная линия
  *
  */
-.section-spacer{
-	margin: 0;
+.s-spacer{
+	margin: rem(125px) 0;
 	border-top: 2px solid #e6e6e6;
 }
 
@@ -105,8 +107,9 @@ h5{
  * secion-header
  *
  */
-.secton-header_line{
+.s-header_line{
 	margin: auto;
+	margin-bottom: rem(150px);
 	width: 91%;
 	h2,
 	span{
@@ -131,7 +134,9 @@ h5{
 	}
 }
 
-
+/*==============================================
+=            Section comment HEADER            =
+==============================================*/
 
 .main-header{
 	position: absolute;
@@ -159,6 +164,10 @@ h5{
 
 .main-header__nav{
 	margin-top: 63px;
+	ul{
+		margin: 0;
+		padding: 0;
+	}
 	li{
 		display: inline-block;
 		vertical-align: middle;
@@ -180,6 +189,7 @@ h5{
 		}
 	}
 }
+/*=====  End of Section comment HEADER  ======*/
 
 
 
@@ -188,7 +198,7 @@ h5{
 =            Section banner            =
 ======================================*/
 
-.section-banner{
+.s-banner{
 	background: #fff url(../img/bg-banner.jpg) center no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -256,26 +266,26 @@ h5{
 =            Section comment ABOUT            =
 =============================================*/
 
-.section-about{}
+.s-about{}
 
-.section-about__wrapper{
-	margin-top: rem(135px);
+.s-about__wrapper{
+
 }
 
-.section-about__icon,
-.section-about__text{
+.s-about__icon,
+.s-about__text{
 	display: inline-block;
 	vertical-align: top;
 }
 
-$section-about__icon: rem(125px);
-.section-about__icon{
-	width: $section-about__icon;
+$s-about__icon: rem(125px);
+.s-about__icon{
+	width: $s-about__icon;
 }
 
-.section-about__text{
+.s-about__text{
 	padding-left: rem(30px);
-	width: calc(100% - #{$section-about__icon});
+	width: calc(100% - #{$s-about__icon});
 	h3{
 		margin: 0 0 1rem;
 	}
@@ -288,9 +298,7 @@ $section-about__icon: rem(125px);
 	}
 }
 
-
-.section-about__story{
-	margin-bottom: rem(115px);
+.s-about__story{
 	img{
 		max-width: 450px;
 		width: 100%;
@@ -298,24 +306,23 @@ $section-about__icon: rem(125px);
 	}
 }
 
-.section-about__skills{
-	margin-top: rem(125px);
+.s-about__skills{
 	img{
 		max-width: 497px;
 		width: 100%;
 		height: auto;
 	}
 }
-.section-about__progress-bar{
+.s-about__progress-bar{
 	margin-top: rem(50px);
 }
 
 .progress-bar__item{
-	margin-bottom: rem(33px);
-}
-.progress-bar__text{
-	margin-bottom: rem(5px);
-	text-transform: uppercase;
+	margin-bottom: rem(29px);
+	.text{
+		margin-bottom: rem(5px);
+		text-transform: uppercase;
+	}
 	.title{
 		color: $gray-dark;
 		font-weight: 600;
@@ -328,11 +335,11 @@ $section-about__icon: rem(125px);
 		color: $gray-dark;
 		font-weight: 300;
 	}
-}
-.progress-bar__skills{
+	.skills{
 		height: rem(10px);
 		background-image: linear-gradient(to right, #f39c12 0%, #f39c12 88%, #e6e6e6 88%, #e6e6e6 100%);
 	}
+}
 /*=====  End of Section comment ABOUT  ======*/
 
 
@@ -340,7 +347,7 @@ $section-about__icon: rem(125px);
 =            Section QUOTE            =
 =====================================*/
 
-.section-quote{
+.s-quote{
 	background: #fff url(../img/bg2.jpg) center no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -350,38 +357,38 @@ $section-about__icon: rem(125px);
 		@include vert-align;
 	}
 }
-.section-quote__content{
+.s-quote__content{
 	text-align: center;
-}
-.section-quote__text{
-	color: #fff;
-	font-size: rem(45px);
-	font-weight: 700;
-	line-height: rem(60px);
+	.text{
+		color: #fff;
+		font-size: rem(45px);
+		font-weight: 700;
+		line-height: rem(60px);
 
-	&:after{
-		content: "";
-		display: block;
-    margin: auto;
-		margin-top: rem(30px);
-		width: rem(50px);
-		height: rem(4px);
-		background-color: $color-st-1;
+		&:after{
+			content: "";
+			display: block;
+	    margin: auto;
+			margin-top: rem(30px);
+			width: rem(50px);
+			height: rem(4px);
+			background-color: $color-st-1;
+		}
 	}
-}
-.section-quote__quote{
-	color: #fff;
-	font-size: rem(110px);
-	font-weight: 700;
-	position: relative;
-	top: 20px;
-}
-.section-quote__fio{
-	color: #fff;
-	font-size: rem(24px);
-	font-weight: 700;
-	line-height: rem(40px);
-	text-transform: uppercase;
+	.quote{
+		color: #fff;
+		font-size: rem(110px);
+		font-weight: 700;
+		position: relative;
+		top: 20px;
+	}
+	.fio{
+		color: #fff;
+		font-size: rem(24px);
+		font-weight: 700;
+		line-height: rem(40px);
+		text-transform: uppercase;
+	}
 }
 /*=====  End of Section QUOTE  ======*/
 
@@ -389,11 +396,10 @@ $section-about__icon: rem(125px);
 /*============================================
 =            Section comment TEAM            =
 ============================================*/
-.section-team__grid{
-	margin-top: rem(150px);
+.s-team__grid{
 	text-align: center;
 }
-.section-team__grid-item{
+.s-team__grid-item{
 	padding: rem(30px) rem(15px);
 	border-top: 4px solid transparent;
 	transition: all .3s;
@@ -415,7 +421,7 @@ $section-about__icon: rem(125px);
     border: 1px solid #e6e6e6;
 	}
 }
-.section-team__text{
+.s-team__text{
 	.fio{
 		margin: 0;
 		color: $gray-dark;
@@ -458,7 +464,7 @@ $section-about__icon: rem(125px);
 /*=============================================
 =            Section comment FACTS            =
 =============================================*/
-.section-facts{
+.s-facts{
 	background: #fff url(../img/bg2.jpg) center no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -470,7 +476,7 @@ $section-about__icon: rem(125px);
 	}
 }
 
-.section-quote__grid-item{
+.s-quote__grid-item{
 	.text{
 		margin-top: rem(22px);
 		color: #fff;
@@ -495,3 +501,28 @@ $section-about__icon: rem(125px);
 }
 
 /*=====  End of Section comment FACTS  ======*/
+
+
+
+/*===============================================
+=            Section comment SECVICE            =
+===============================================*/
+
+.s-serv__grid{
+	text-align: center;
+}
+
+.s-serv__grid-item{
+
+	&:hover{
+
+		.shape-icon{
+			transition: all .3s;
+			color: #fff;
+			background-color: $color-st-1;
+		}
+	}
+}
+
+
+/*=====  End of Section comment SECVICE  ======*/

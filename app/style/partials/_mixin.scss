@@ -5,11 +5,10 @@
 
 /* Выравнивание по вертикали */
 @mixin vert-align{
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 50%;
-	transform: translateY(-50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Затемнение фона */
