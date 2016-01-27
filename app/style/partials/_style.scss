@@ -58,16 +58,16 @@ h5{
 .section{
 	position: relative;
 	padding: rem(100px) 0;
-	&:after{
-		content: "";
-		width: 108%;
-		height: 100%;
-		background-color: #fff;
-		position: absolute;
-		bottom: -100%;
-		transform: rotate(-4.25deg);
-		transform-origin: left;
-	}
+	// &:after{
+	// 	content: "";
+	// 	width: 108%;
+	// 	height: 100%;
+	// 	background-color: #fff;
+	// 	position: absolute;
+	// 	bottom: -100%;
+	// 	transform: rotate(-4.25deg);
+	// 	transform-origin: left;
+	// }
 }
 
 /**
@@ -452,3 +452,46 @@ $section-about__icon: rem(125px);
 }
 
 /*=====  End of Section comment TEAM  ======*/
+
+
+
+/*=============================================
+=            Section comment FACTS            =
+=============================================*/
+.section-facts{
+	background: #fff url(../img/bg2.jpg) center no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	min-height: rem(700px);
+	text-align: center;
+	@include overlay(#000, .75);
+	.container{
+		@include vert-align;
+	}
+}
+
+.section-quote__grid-item{
+	.text{
+		margin-top: rem(22px);
+		color: #fff;
+		font-weight: 700;
+		font-size: rem(25px);
+	}
+	.num{
+		font-size: rem(45px);
+		line-height: 1em;
+		margin: 0;
+	}
+	.shape-icon{
+		color: #fff;
+		width: rem(170px);
+		height: rem(170px);
+		line-height: rem(170px);
+	}
+	&:hover .shape-icon{
+		color: $color-st-1;
+		border-color: #fff;
+	}
+}
+
+/*=====  End of Section comment FACTS  ======*/
