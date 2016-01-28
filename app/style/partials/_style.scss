@@ -52,6 +52,28 @@ h5{
 	}
 }
 
+
+/**
+ *
+ * Block swiper-pagination
+ *
+ */
+.swiper-pagination{
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -130px;
+}
+.swiper-pagination-bullet{
+	width: 12px;
+	height: 12px;
+	margin: 0 2.5px;
+	background: #626e79;
+}
+.swiper-pagination-bullet-active{
+	background: #fff;
+}
+
+
 /**
  *
  * Block section
@@ -235,21 +257,6 @@ h5{
 		font-weight: 300;
 		line-height: rem(60px);
 	}
-	.swiper-pagination{
-    left: 0;
-    right: 0;
-    bottom: -130px;
-	}
-	.swiper-pagination-bullet{
-    width: 12px;
-    height: 12px;
-    margin: 0 2.5px;
-    background: #626e79;
-  }
-  .swiper-pagination-bullet-active{
-  	background: #fff;
-  }
-
 	.btn_st-1{
 		font-size: rem(15px);
 		padding: rem(9px) rem(30px);
@@ -258,7 +265,6 @@ h5{
 }
 
 /*=====  End of Section banner  ======*/
-
 
 
 
@@ -456,7 +462,6 @@ $s-about__icon: rem(125px);
 		}
 	}
 }
-
 /*=====  End of Section comment TEAM  ======*/
 
 
@@ -475,7 +480,6 @@ $s-about__icon: rem(125px);
 		@include vert-align;
 	}
 }
-
 .s-quote__grid-item{
 	.text{
 		margin-top: rem(22px);
@@ -499,7 +503,6 @@ $s-about__icon: rem(125px);
 		border-color: #fff;
 	}
 }
-
 /*=====  End of Section comment FACTS  ======*/
 
 
@@ -507,7 +510,6 @@ $s-about__icon: rem(125px);
 /*===============================================
 =            Section comment SECVICE            =
 ===============================================*/
-
 .s-serv__grid{
 	text-align: center;
 }
@@ -600,3 +602,57 @@ $s-about__icon: rem(125px);
 	}
 }
 /*=====  End of Section comment SECVICE  ======*/
+
+
+/*===================================================
+=            Section comment TESTIMONIAL            =
+===================================================*/
+.s-testimonial{
+	background: #fff url(../img/bg2.jpg) center no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	min-height: rem(700px);
+	@include overlay(#000, .75);
+	.container{
+		@include vert-align;
+	}
+}
+.s-testimonial__content{
+	text-align: center;
+	.fio{
+		color: #fff;
+		font-size: rem(24px);
+		font-weight: 700;
+		line-height: 1em;
+		text-transform: uppercase;
+		margin: 0;
+		&:after{
+			content: "";
+			display: block;
+			margin: rem(15px) auto rem(25px);
+			width: rem(50px);
+			height: rem(4px);
+			background-color: $color-st-1;
+		}
+	}
+	.text{
+		margin: 0;
+		color: #fff;
+		font-size: rem(22px);
+		font-weight: 300;
+		line-height: rem(30px);
+		font-style: italic;
+	}
+	img{
+		margin-top: rem(25px);
+		display: inline-block;
+		border-radius: 50%;
+		border: 2px solid white;
+		width: 106px;
+		height: 106px;
+	}
+	.swiper-pagination{
+		bottom: -45px;
+	}
+}
+/*=====  End of Section comment TESTIMONIAL  ======*/
