@@ -14,6 +14,7 @@ body{
 }
 h1,h2,h3{
 	text-transform: uppercase;
+	margin: 0;
 }
 h2,h3{
 	color: $gray-dark;
@@ -33,6 +34,10 @@ h4{
 }
 h5{
 	font-size: $font-size-h5;
+}
+
+p{
+	margin: 0;
 }
 
 
@@ -58,11 +63,6 @@ h5{
  * Block swiper-pagination
  *
  */
-.swiper-pagination{
-	left: 50%;
-	transform: translateX(-50%);
-	bottom: -130px;
-}
 .swiper-pagination-bullet{
 	width: 12px;
 	height: 12px;
@@ -232,6 +232,11 @@ h5{
 	@include overlay(#34495e, .7);
 	.container{
 		@include vert-align;
+	}
+	.swiper-pagination{
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: -130px;
 	}
 	.swiper-slide{
 		text-align: center;
@@ -522,8 +527,15 @@ $s-about__icon: rem(125px);
 			background-color: $color-st-1;
 		}
 	}
+	h3{
+		margin: rem(20px) 0;
+	}
 }
-
+.s-serv__text{
+	h3{
+		margin: rem(20px) 0;
+	}
+}
 .s-serv__pricing-item{
 	padding-right: 75px;
 }
@@ -619,6 +631,13 @@ $s-about__icon: rem(125px);
 }
 .s-testimonial__content{
 	text-align: center;
+
+	.swiper-pagination{
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: -130px;
+	}
+
 	.fio{
 		color: #fff;
 		font-size: rem(24px);
@@ -656,3 +675,143 @@ $s-about__icon: rem(125px);
 	}
 }
 /*=====  End of Section comment TESTIMONIAL  ======*/
+
+
+
+/*=================================================
+=            Section comment PORTFOLIO            =
+=================================================*/
+.s-portf{
+	.swiper-container{
+		width: 100%;
+		height: 580px;
+	}
+	.swiper-slide{
+		img{
+			width: 100%;
+			height: auto;
+			display: inline-block;
+		}
+	}
+	.swiper-control{
+		margin-top: rem(50px);
+		text-align: center;
+	}
+	.swiper-btn{
+		margin: 0 rem(2.5px);
+		display: inline-block;
+		width: rem(35px);
+		height: rem(35px);
+		background-color: white;
+		border: 2px solid #e6e6e6;
+		cursor: pointer;
+		.icon{
+			text-align: center;
+			line-height: rem(30px);
+			color: $gray-dark;
+			font-size: rem(20px);
+		}
+	}
+	.swiper-subs{
+		margin-top: rem(25px);
+		text-align: center;
+		.cat{
+			color: #808080;
+			font-size: rem(14px);
+		}
+	}
+}
+
+.s-portf__isotope{
+
+}
+
+.s-portf__isotope-filter{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	li{
+		display: inline-block;
+		vertical-align: middle;
+		&:not(:last-child):after{
+			color: #a6a6a6;
+			content: "\\\\";
+			padding: 0 rem(35px);
+		}
+		span{
+			font-size: rem(14px);
+			font-weight: 700;
+			text-transform: uppercase;
+			color: $gray-dark;
+			cursor: pointer;
+		}
+	}
+	li.active span{
+		color: $color-st-1;
+	}
+}
+
+.s-portf__isotope-grid{
+	margin-top: rem(80px);
+	.grid-item{
+
+		padding: 0;
+
+		img{
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+		.text{
+			margin: rem(10px) 0;
+			text-align: center;
+			line-height: rem(22px);
+		}
+		h3{
+			font-size: rem(15px);
+		}
+		.category{
+			color: #8c8c8c;
+			font-size: rem(14px);
+		}
+		/* .aaa{
+			position: relative;
+		}
+		.back{
+			width: 100%;
+			height: 100%;
+			&:after,
+			&:before{
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 1px;
+				height: 46px;
+
+				background-color: #fff;
+				display: block;
+			}
+			&:after{
+				margin-top: -23px;
+			}
+			&:before{
+				margin-left: -23px;
+			// 	content: "";
+			// 	position: absolute;
+			// 	top: 50%;
+			// 	left: 50%;
+			// 	// transform: translate(-50%, -50%);
+			// 		width: 1px;
+			// height: 46px;
+			transform: rotate(90deg);
+			// background-color: white;
+			// display: block;
+			}
+		} */
+	}
+}
+/*=====  End of Section comment PORTFOLIO  ======*/
+
+
