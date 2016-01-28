@@ -513,9 +513,7 @@ $s-about__icon: rem(125px);
 }
 
 .s-serv__grid-item{
-
 	&:hover{
-
 		.shape-icon{
 			transition: all .3s;
 			color: #fff;
@@ -524,5 +522,81 @@ $s-about__icon: rem(125px);
 	}
 }
 
+.s-serv__pricing-item{
+	padding-right: 75px;
+}
 
+.s-serv__pr-table{
+}
+.pr-table__plan{
+	width: 250px;
+	float: right;
+	margin-right: -1px;
+	text-align: center;
+	border: 1px solid #e6e6e6;
+}
+.pr-table__header{
+	padding: rem(30px) rem(10px);
+	color: $gray-dark;
+	font-size: rem(22px);
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 1em;
+	.line{
+		margin: 0;
+		&:after{
+			content: "";
+			background-color: $color-st-1;
+			margin: rem(10px) auto;
+			display: block;
+			height: 2px;
+			width: rem(50px);
+		}
+	}
+}
+
+.pr-table__body{
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li{
+		border-top: 1px solid #e6e6e6;
+		color: #737373;
+		padding: rem(12px);
+		font-size: rem(15px);
+		line-height: rem(24px);
+
+		&:nth-child(odd){
+			background-color: #fafafa;
+		}
+	}
+	.btn{
+		font-size: rem(15px);
+		margin: rem(23px) 0;
+		padding: rem(5px) rem(24px);
+	}
+}
+
+.pr-table__plan_gold{
+	transform: translateY(-15px);
+	border: 1px solid transparent;
+	.pr-table__header{
+		padding-top: rem(45px);
+		color: #fff;
+		background-color: $color-st-1;
+	}
+	.pr-table__body{
+		li:nth-child(odd){
+				background-color: #e6e6e6;
+		}
+		li:nth-child(even){
+				background-color: #f2f2f2;
+		}
+		.btn{
+			margin-bottom: rem(38px);
+		}
+	}
+}
 /*=====  End of Section comment SECVICE  ======*/
