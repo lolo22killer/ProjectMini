@@ -22,7 +22,8 @@
     "swiper": "latest",
     "jquery-validation": "latest",
     "bootstrap": "latest",
-    "fancybox": "fancyBox#~2.1.5"
+    "fancybox": "fancyBox#~2.1.5",
+    "tooltipster": "~3.3.0"
   },
   "overrides": {},
   "devDependencies": {}

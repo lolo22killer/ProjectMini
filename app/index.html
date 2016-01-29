@@ -1,22 +1,4 @@
 //= template/header.html
-<header class="main-header clearfix">
-	<div class="container">
-		<div class="main-header__logo">
-			<h1>mini</h1>
-		</div>
-		<nav class="main-header__nav pull-right"  role="navigation">
-			<ul class="list-unstyled">
-				<li class="active"><a href="">About</a></li>
-				<li><a href="">Team</a></li>
-				<li><a href="">Services</a></li>
-				<li><a href="">Works</a></li>
-				<li><a href="">Blog</a></li>
-				<li><a href="">Contact</a></li>
-			</ul>
-		</nav>
-	</div>
-</header>
-
 
 <section class="section s-banner">
 	<div class="container">
@@ -821,5 +803,70 @@
 	</div>
 </section>
 <!--====  End of Section CLIENTS  ====-->
+
+
+<!--=====================================
+=            Section CONTACT            =
+======================================-->
+<section class="section s-contact">
+	<div class="container">
+		<header class="s-header s-header_line">
+			<h2>contact</h2>
+			<span>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet </span>
+		</header>
+
+		<div class="row">
+
+			<div class="col-md-6 col-xs-12">
+				<!-- !s-contact__b-form -->
+				<div class="s-contact__b-form">
+					<h3>Drop Us A Message</h3>
+					<form action="#" class="s-contact__form" novalidate>
+						<div class="form-group">
+							<div class="form-icon name tooltip" title="This is my div's tooltip message!">
+								<input type="text" name="name" class="form-control" placeholder="Name">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-icon email">
+								<input type="email" name="email" class="form-control" placeholder="Email">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-icon message">
+								<textarea name="message" class="form-control" placeholder="Message" rows="5"></textarea>
+							</div>
+						</div>
+						<input type="submit" class="btn btn_st-1" value="submit">
+					</form>
+				</div><!-- !s-contact__b-form -->
+			</div>
+
+			<div class="col-md-6 col-xs-12">
+				<!-- s-contact__b-info -->
+				<div class="s-contact__b-info">
+					<h3>contact info</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, perspiciatis, obcaecati. Aperiam tenetur, voluptatem vel excepturi maiores praesentium quibusdam, quaerat doloribus consequuntur ducimus totam dolor eligendi esse dolorem officiis cum sit. Assumenda aliquam modi animi sequi temporibus, unde error cupiditate!</p>
+					<ul>
+						<li><i class="icon shape-icon icon-location"></i>13/2 Elizabeth St, Melbourne VIC 3000, Australia</li>
+						<li><i class="icon shape-icon icon-phone"></i>+61 3146 8728, +61 0987 6543</li>
+						<li><i class="icon shape-icon icon-mail"></i>support@envato.net</li>
+					</ul>
+				</div><!-- !s-contact__b-info -->
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of Section CONTACT  ====-->
+
+
+<!--=================================
+=            Section MAP            =
+==================================-->
+<section id="map" class="section s-map">
+</section>
+<script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+<script type="text/javascript">var map;DG.then(function(){map = DG.map('map',{center:[54.98, 82.89],zoom:15,scrollWheelZoom:false});DG.marker([54.98, 82.89]).addTo(map);});</script>
+<!--====  End of Section MAP  ====-->
 
 //= template/footer.html

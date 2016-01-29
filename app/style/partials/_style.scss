@@ -966,3 +966,139 @@ $s-about__icon: rem(125px);
 	}
 }
 /*=====  End of Section comment CLIENTS  ======*/
+
+
+/*===============================================
+=            Section comment CONTACT            =
+===============================================*/
+.s-contact{
+	h3{
+		margin-bottom: 30px;
+	}
+}
+.s-contact__b-form{
+
+}
+.s-contact__form{
+	.form-group{
+		margin: 5px 0;
+	}
+	label.error{
+		margin-top: 15px;
+		display: block;
+	}
+	.form-icon{
+		position: relative;
+		&:after{
+			position: absolute;
+			top: 0;
+			right: 25px;
+			display: block;
+			font-size: 18px;
+			line-height: rem(40px);
+			color: $color-st-1;
+			font-family: fontello;
+		}
+		&.name:after{
+			content: '\e80f';
+		}
+		&.email:after{
+			content: '\e822';
+		}
+		&.message:after{
+			content: '\e824';
+		}
+	}
+	.form-control{
+		width: 100%;
+		border: 2px solid #d9d9d9;
+		background-color: #fff;
+		line-height: rem(40px);
+		padding: 0 60px 0 20px;
+		font-size: 15px;
+		&:focus {
+			outline: none;
+			box-shadow: none;
+			border-color: $color-st-1;
+		}
+	}
+	.form-control.error{
+		border-color: #b12b2b;
+	}
+	.form-control.valid{
+		border-color: #87ce87;
+	}
+	textarea{
+		resize: none;
+	}
+	.btn{
+		margin-top: rem(20px);
+		font-size: 16px;
+		font-weight: 600;
+		padding: rem(10px) rem(40px);
+	}
+}
+
+.s-contact__b-info{
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 25px 0 0;
+	}
+	li{
+		padding: 5px 0;
+	}
+	.shape-icon{
+		width: rem(35px);
+		height: rem(35px);
+		line-height: rem(30px);
+		font-size: rem(20px);
+		margin-right: 20px;
+	}
+}
+/*=====  End of Section comment CONTACT  ======*/
+
+
+/*===========================================
+=            Section comment MAP            =
+===========================================*/
+.s-map{
+	width: 100%;
+	height: 600px;
+}
+/*=====  End of Section comment MAP  ======*/
+
+
+/*==============================================
+=            Section comment FOOTER            =
+==============================================*/
+.main-footer{
+	margin: rem(40px) 0;
+	.copyr{
+		font-size: rem(14px);
+		font-weight: 600;
+		text-transform: uppercase;
+		color: $gray-dark;
+	}
+	.separ{
+		color: #a6a6a6;
+	}
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	li{
+		display: inline-block;
+		padding: 0 3px;
+	}
+	.icon{
+		color: $gray-dark;
+		font-size: rem(20px);
+		cursor: pointer;
+		&:hover{
+			color: $color-st-1;
+		}
+	}
+}
+/*=====  End of Section comment FOOTER  ======*/
