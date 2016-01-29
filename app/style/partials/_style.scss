@@ -862,3 +862,70 @@ $s-about__icon: rem(125px);
 	}
 }
 /*=====  End of Section comment Tweet  ======*/
+
+
+/*============================================
+=            Section comment BLOG            =
+============================================*/
+.s-blog__grid-item{
+	.visual{
+		position: relative;
+	}
+	img{
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+	.v-panel{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+	}
+	.col-icon{
+		display: inline-block;
+		width: 20%;
+		vertical-align: bottom;
+    text-align: right;
+	}
+	.icon{
+		color: #fff;
+		background-color: $color-st-1;
+		display: inline-block;
+		width: rem(44px);
+		height: rem(44px);
+		text-align: center;
+		line-height: rem(44px);
+	}
+	h3{
+		display: inline-block;
+		width: 80%;
+		padding: rem(25px) rem(20px) rem(10px);
+		background-color: #fff;
+	}
+	.descr{
+		margin: rem(20px) 0 rem(60px);
+	}
+	.info{
+		padding-right: 20px;
+		font-size: rem(14px);
+		line-height: rem(24px);
+		color: #808080;
+		width: 20%;
+		text-align: right;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.text{
+		width: 80%;
+		display: inline-block;
+		padding-left: rem(20px);
+	}
+	.btn{
+		margin-top: rem(25px);
+		font-size: rem(14px);
+		padding: rem(3px) rem(22px);
+		font-weight: 700;
+	}
+}
+/*=====  End of Section comment BLOG  ======*/
