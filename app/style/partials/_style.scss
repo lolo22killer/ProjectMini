@@ -929,3 +929,40 @@ $s-about__icon: rem(125px);
 	}
 }
 /*=====  End of Section comment BLOG  ======*/
+
+
+
+/*===============================================
+=            Section comment CLIENTS            =
+===============================================*/
+.s-clients{
+	background: #fff url(../img/bg2.jpg) center no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	min-height: rem(700px);
+	@include overlay(#000, .75);
+	.container{
+		@include vert-align;
+	}
+}
+.s-clients__content{
+	h3{
+		text-align: center;
+		color: #fff;
+		font-size: rem(30px);
+		line-height: rem(60px);
+	}
+}
+.s-clients__grid{
+	margin-top: 40px;
+}
+.s-clients__grid-item{
+	margin-top: rem(20px);
+	text-align: center;
+	border: 2px solid rgba(255, 255, 255, 0.25);
+	img{
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+/*=====  End of Section comment CLIENTS  ======*/
