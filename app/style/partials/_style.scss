@@ -40,6 +40,10 @@ p{
 	margin: 0;
 }
 
+a{
+	color: $color-st-1;
+	text-decoration: none;
+}
 
 .btn_st-1{
 	text-decoration: none;
@@ -755,61 +759,66 @@ $s-about__icon: rem(125px);
 .s-portf__isotope-grid{
 	margin-top: rem(80px);
 	.grid-item{
-
 		padding: 0;
-
-		img{
-			width: 100%;
-			height: auto;
-			display: block;
-		}
-		.text{
-			margin: rem(10px) 0;
-			text-align: center;
-			line-height: rem(22px);
-		}
-		h3{
-			font-size: rem(15px);
-		}
-		.category{
-			color: #8c8c8c;
-			font-size: rem(14px);
-		}
-		/* .aaa{
-			position: relative;
-		}
-		.back{
-			width: 100%;
-			height: 100%;
-			&:after,
-			&:before{
-				content: "";
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				width: 1px;
-				height: 46px;
-
-				background-color: #fff;
+		cursor: pointer;
+		&:hover{
+			h3{
+				color: $color-st-1;
+			}
+			img{
+				transition: all .3s;
+				opacity: .1;
+			}
+			.back{
+				transition: all .3s;
 				display: block;
 			}
-			&:after{
-				margin-top: -23px;
-			}
-			&:before{
-				margin-left: -23px;
-			// 	content: "";
-			// 	position: absolute;
-			// 	top: 50%;
-			// 	left: 50%;
-			// 	// transform: translate(-50%, -50%);
-			// 		width: 1px;
-			// height: 46px;
+		}
+	}
+	img{
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+	.caption{
+		margin: rem(10px) 0;
+		text-align: center;
+		line-height: rem(22px);
+	}
+	h3{
+		font-size: rem(15px);
+	}
+	.category{
+		color: #8c8c8c;
+		font-size: rem(14px);
+	}
+	.ihover{
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	.back{
+		@include vert-align;
+		width: 98px;
+		height: 98px;
+		background-color: rgba(243, 156, 18, 0.5);
+		border-radius: 50%;
+		display: none;
+		&:after,
+		&:before{
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -23px;
+			width: 1px;
+			height: 46px;
+			background-color: #fff;
+			display: block;
+		}
+		&:before{
 			transform: rotate(90deg);
-			// background-color: white;
-			// display: block;
-			}
-		} */
+		}
 	}
 }
 /*=====  End of Section comment PORTFOLIO  ======*/

@@ -54,4 +54,17 @@ $(function () {
       $this.addClass('active').siblings('.active').removeClass('active');
       $grid.isotope({ filter: filterValue });
     });
+
+
+   $(".fancybox").fancybox({
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+
+
 });
+
+
+// $(window).load(function() {
+//    $('.s-portf__isotope-grid').isotope('reload');
+// })

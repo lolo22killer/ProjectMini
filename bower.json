@@ -21,7 +21,8 @@
     "isotope": "latest",
     "swiper": "latest",
     "jquery-validation": "latest",
-    "bootstrap": "latest"
+    "bootstrap": "latest",
+    "fancybox": "fancyBox#~2.1.5"
   },
   "overrides": {},
   "devDependencies": {}
