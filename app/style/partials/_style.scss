@@ -760,7 +760,6 @@ $s-about__icon: rem(125px);
 	margin-top: rem(80px);
 	.grid-item{
 		padding: 0;
-		cursor: pointer;
 		&:hover{
 			h3{
 				color: $color-st-1;
@@ -793,6 +792,7 @@ $s-about__icon: rem(125px);
 		font-size: rem(14px);
 	}
 	.ihover{
+		cursor: pointer;
 		position: relative;
 		width: 100%;
 		height: 100%;
@@ -824,3 +824,41 @@ $s-about__icon: rem(125px);
 /*=====  End of Section comment PORTFOLIO  ======*/
 
 
+/*=============================================
+=            Section comment Tweet            =
+=============================================*/
+.s-tweet{
+	background: #fff url(../img/bg2.jpg) center no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	min-height: rem(700px);
+	@include overlay(#000, .75);
+	.container{
+		@include vert-align;
+	}
+}
+.s-tweet__content{
+	text-align: center;
+	.text{
+		margin-top: rem(30px);
+		color: #fff;
+		font-size: rem(22px);
+		font-weight: 700;
+		line-height: rem(33px);
+	}
+	.time{
+		color: #808080;
+		font-size: rem(15px);
+		font-weight: 300;
+		font-style: italic;
+		line-height: rem(38px);
+	}
+	.shape-icon{
+		border: 2px solid #fff;
+		width: rem(106px);
+		height: rem(106px);
+		line-height: rem(106px);
+		color: $color-st-1;
+	}
+}
+/*=====  End of Section comment Tweet  ======*/
