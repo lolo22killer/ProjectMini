@@ -106,9 +106,10 @@ a{
 	background-attachment: fixed;
 	background-size: cover;
 	min-height: rem(750px);
+	height: 100%;
 	.container{
-		@include vert-align;
-		top: 55%;
+		position: relative;
+		padding-bottom: rem(120px);
 	}
 }
 
@@ -278,7 +279,7 @@ a{
 	background: #fff url(../img/bg-banner.jpg) center no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	min-height: 960px;
+	min-height: rem(1100px);
 	height: 100vh;
 	color: #fff;
 	.overlay{
@@ -290,7 +291,7 @@ a{
 	.swiper-pagination{
 		left: 50%;
 		transform: translateX(-50%);
-		bottom: -130px;
+		bottom: rem(-130px);
 	}
 	.swiper-slide{
 		text-align: center;
@@ -303,18 +304,18 @@ a{
 	.swiper-text_lg{
 		font-size: rem(68px);
 		font-weight: 700;
-		line-height: rem(80px);
+		line-height: 1.3em;
 		letter-spacing: -3px;
 	}
 	.swiper-text_md{
 		font-size: rem(45px);
 		font-weight: 300;
-		line-height: rem(65px);
+		line-height: 1.44em
 	}
 	.swiper-text_sm{
 		font-size: rem(40px);
 		font-weight: 300;
-		line-height: rem(60px);
+		line-height: 1.5em
 	}
 	.btn_st-1{
 		margin-bottom: 10px;
@@ -369,6 +370,8 @@ $s-about__icon: rem(125px);
 		max-width: 450px;
 		width: 100%;
 		height: auto;
+		display: block;
+    margin: auto;
 	}
 }
 
@@ -377,6 +380,8 @@ $s-about__icon: rem(125px);
 		max-width: 497px;
 		width: 100%;
 		height: auto;
+		display: block;
+    margin: auto;
 	}
 }
 .s-about__progress-bar{
@@ -415,6 +420,9 @@ $s-about__icon: rem(125px);
 
 .s-quote{
 	background: #fff url(../img/bg2.jpg) center no-repeat;
+	.container {
+		padding-top: rem(200px);
+	}
 }
 .s-quote__content{
 	text-align: center;
@@ -422,9 +430,33 @@ $s-about__icon: rem(125px);
 		color: #fff;
 		font-size: rem(45px);
 		font-weight: 700;
-		line-height: rem(60px);
-
+		line-height: 1.333em;
+		position: relative;
+		display: inline-block;
+		margin: 0 46px;
+		&:before,
 		&:after{
+			content: "\"";
+			position: absolute;
+			color: #fff;
+			font-size: rem(110px);
+			font-weight: 700;
+			top: 0;
+		}
+		&:before{
+			left: -46px;
+		}
+		&:after{
+			right: -46px;
+		}
+	}
+	.fio{
+		color: #fff;
+		font-size: rem(24px);
+		font-weight: 700;
+		line-height: 1.66em;
+		text-transform: uppercase;
+		&:before{
 			content: "";
 			display: block;
 	    margin: auto;
@@ -433,20 +465,6 @@ $s-about__icon: rem(125px);
 			height: rem(4px);
 			background-color: $color-st-1;
 		}
-	}
-	.quote{
-		color: #fff;
-		font-size: rem(110px);
-		font-weight: 700;
-		position: relative;
-		top: 20px;
-	}
-	.fio{
-		color: #fff;
-		font-size: rem(24px);
-		font-weight: 700;
-		line-height: rem(40px);
-		text-transform: uppercase;
 	}
 }
 /*=====  End of Section QUOTE  ======*/
@@ -524,6 +542,9 @@ $s-about__icon: rem(125px);
 =============================================*/
 .s-facts{
 	background: #fff url(../img/bg2.jpg) center no-repeat;
+	.container {
+		padding-top: rem(200px);
+	}
 }
 .s-quote__grid-item{
 	text-align: center;
@@ -584,8 +605,9 @@ $s-about__icon: rem(125px);
 .s-serv__pr-table{
 }
 .pr-table__plan{
-	width: 250px;
-	float: right;
+	// width: 33%;
+	// float: right;
+	padding: 0;
 	margin-right: -1px;
 	text-align: center;
 	border: 1px solid #e6e6e6;
@@ -662,14 +684,17 @@ $s-about__icon: rem(125px);
 ===================================================*/
 .s-testimonial{
 	background: #fff url(../img/bg2.jpg) center no-repeat;
+	.container {
+		padding-top: rem(140px);
+	}
 }
+
 .s-testimonial__content{
 	text-align: center;
 
 	.swiper-pagination{
-		left: 50%;
-		transform: translateX(-50%);
-		bottom: -130px;
+		position: relative;
+		bottom: -45px;
 	}
 
 	.fio{
@@ -703,9 +728,6 @@ $s-about__icon: rem(125px);
 		border: 2px solid white;
 		width: 106px;
 		height: 106px;
-	}
-	.swiper-pagination{
-		bottom: -45px;
 	}
 }
 /*=====  End of Section comment TESTIMONIAL  ======*/
@@ -859,6 +881,9 @@ $s-about__icon: rem(125px);
 =============================================*/
 .s-tweet{
 	background: #fff url(../img/bg2.jpg) center no-repeat;
+	.container {
+		padding-top: rem(200px);
+	}
 }
 .s-tweet__content{
 	text-align: center;
@@ -960,6 +985,9 @@ $s-about__icon: rem(125px);
 ===============================================*/
 .s-clients{
 	background: #fff url(../img/bg2.jpg) center no-repeat;
+	.container{
+		padding-top: rem(115px);
+	}
 }
 .s-clients__content{
 	h3{
@@ -979,6 +1007,8 @@ $s-about__icon: rem(125px);
 	img{
 		display: inline-block;
 		vertical-align: middle;
+		max-width: 261px;
+		height: auto;
 	}
 }
 /*=====  End of Section comment CLIENTS  ======*/
@@ -1049,7 +1079,7 @@ $s-about__icon: rem(125px);
 	}
 	.btn{
 		margin-top: rem(20px);
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 600;
 		padding: rem(10px) rem(40px);
 	}

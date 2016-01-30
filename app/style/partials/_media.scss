@@ -2,7 +2,164 @@
 										МЕДИА ЗАПРОСЫ
 ================================================================================*/
 
-@media (max-width: 1200px) {}
-@media (max-width: 992px) {}
-@media (max-width: 768px) {}
-@media (max-width: 544px) {}
+@media (max-width: 1200px) {
+	html{
+		font-size: 15px;
+	}
+	.s-header_line{
+		width: 100%;
+		margin-bottom: rem(100px);
+	}
+	.s-spacer{
+		margin: rem(80px) 0;
+	}
+	.s-banner{
+		min-height: rem(950px);
+		.swiper-pagination{
+			bottom: rem(-80px);
+		}
+		.swiper-text{
+			margin-bottom: rem(50px);
+		}
+		.swiper-text_lg{
+			font-size: rem(55px);
+		}
+		.swiper-text_md{
+			font-size: rem(40px);
+		}
+		.swiper-text_sm{
+			font-size: rem(35px);
+		}
+	}
+
+	.s-quote__content{
+		.text{
+			font-size: rem(40px);
+			&:before,
+			&:after{
+				font-size: rem(100px);
+			}
+		}
+		.fio{
+			font-size: rem(22px);
+		}
+	}
+
+	.s-serv__pricing-item{
+		padding-right: 0;
+		text-align: center;
+		float: none;
+    margin: auto;
+		margin-bottom: 50px;
+	}
+
+	.s-clients{
+		height: rem(900px);
+	}
+}
+@media (max-width: 992px) {
+	html{
+		font-size: 14px;
+	}
+	.s-about__story{
+		img{
+			margin-top: rem(30px);
+		}
+	}
+
+	.s-quote__grid-item{
+		margin-bottom: rem(30px);
+	}
+	.s-serv__grid-item.center-block{
+		float: none;
+		margin: auto;
+	}
+
+	.s-facts{
+		height: rem(900px);
+	}
+
+
+	.s-serv__grid-item{
+		margin-bottom: rem(35px);
+	}
+
+
+	.s-portf__isotope-filter{
+		li{
+			padding: 10px 0;
+		}
+	}
+	.s-portf__isotope-grid {
+		margin-top: 2rem;
+	}
+
+
+	.s-contact__b-info{
+		margin-top: rem(35px);
+	}
+
+}
+
+@media (max-width: 768px) {
+
+	html{
+		font-size: 12px;
+	}
+
+	.col-xs-10{
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.s-header_line{
+		margin-bottom: 35px;
+		span{
+			display: block;
+			padding-left: 0;
+			margin-top: 10px;
+		}
+	}
+
+	// .s-team__grid-item{
+	// 	float: none;
+	// 	margin-left: auto;
+	// 	margin-right: auto
+	// }
+
+	// .s-serv__grid-item{
+	// 	float: none;
+	// 	margin-left: auto;
+	// 	margin-right: auto;
+	// }
+
+	.s-clients__grid-item{
+		// width: 80%;
+		// margin-left: auto;
+		// margin-right: auto
+	}
+
+	.pr-table__plan{
+		// float: none;
+		// margin: auto;
+		margin-bottom: 30px;
+	}
+
+	.s-map{
+		margin-top: rem(60px);
+		height: rem(300px);
+	}
+
+	.main-footer{
+		.social,
+		.copyr{
+			text-align: center;
+			width: 100%;
+
+		}
+		.social{
+			margin-top: 30px;
+		}
+	}
+}

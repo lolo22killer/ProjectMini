@@ -37,11 +37,15 @@ $(function () {
 				slidesPerView: 1,
 				paginationClickable: true,
 				grabCursor: true,
-				mousewheelControl: true,
 				direction: 'vertical',
 				loop: true
 		});
 
+		/*----------  Subsection height vertical slider  ----------*/
+		function swiperContainerHeight() {
+			$('.s-portf .swiper-container-h').css({height: $('.s-portf .swiper-container-v').find('img').height()});
+		}
+		swiperContainerHeight();
 
 
 		/*----------  Subsection comment isotope  ----------*/
@@ -111,7 +115,10 @@ $(function () {
 		});
 
 
-
+/*----------  Subsection comment resize window  ----------*/
+		$(window).resize(function(){
+			swiperContainerHeight();
+		})
 
 });
 
