@@ -29,12 +29,6 @@ h2{
 h3{
 	font-size: $font-size-h3;
 }
-h4{
-	font-size: $font-size-h4;
-}
-h5{
-	font-size: $font-size-h5;
-}
 
 p{
 	margin: 0;
@@ -80,23 +74,75 @@ a{
 
 /**
  *
+ * Block косые края
+ *
+ */
+.corner:after,
+.corner:before{
+	content: "";
+	width: 110%;
+	height: 150px;
+	left: -5%;
+	background-color: #fff;
+	position: absolute;
+	transform: rotate(-3deg);
+	transform-origin: left;
+	z-index: 1;
+}
+.corner:after{
+	bottom: -150px;
+}
+.corner:before{
+	top: 0;
+}
+
+/**
+ *
+ * Block фоновая картика
+ *
+ */
+
+.section.corner:not(.s-banner){
+	background-attachment: fixed;
+	background-size: cover;
+	min-height: rem(750px);
+	.container{
+		@include vert-align;
+		top: 55%;
+	}
+}
+
+
+.overlay{
+	@include overlay(#000, .75);
+}
+
+
+.wrapper{
+	overflow: hidden;
+	max-width: 1970px;
+	width: 100%;
+	margin: auto;
+	background-color: #fff;
+}
+
+/**
+ *
  * Block section
  *
  */
 .section{
 	position: relative;
-	padding: rem(100px) 0;
-	// &:after{
-	// 	content: "";
-	// 	width: 108%;
-	// 	height: 100%;
-	// 	background-color: #fff;
-	// 	position: absolute;
-	// 	bottom: -100%;
-	// 	transform: rotate(-4.25deg);
-	// 	transform-origin: left;
-	// }
+	padding-top: rem(100px);
 }
+.section:not( .corner ),
+.container{
+	z-index: 3;
+}
+.section.corner{
+	z-index: 2;
+}
+
 
 /**
  *
@@ -125,7 +171,6 @@ a{
 	margin: rem(125px) 0;
 	border-top: 2px solid #e6e6e6;
 }
-
 
 
 /**
@@ -159,6 +204,8 @@ a{
 		line-height: rem(25px);
 	}
 }
+
+
 
 /*==============================================
 =            Section comment HEADER            =
@@ -225,15 +272,18 @@ a{
 ======================================*/
 
 .s-banner{
+	&.corner:before{
+		display: none;
+	}
 	background: #fff url(../img/bg-banner.jpg) center no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	min-height: 1100px;
-
+	min-height: 960px;
 	height: 100vh;
-
 	color: #fff;
-	@include overlay(#34495e, .7);
+	.overlay{
+		@include overlay(#34495e, .7);
+	}
 	.container{
 		@include vert-align;
 	}
@@ -248,7 +298,7 @@ a{
 	.swiper-text{
 		text-transform: uppercase;
 		color: #fff;
-		margin-bottom: rem(80px);
+		margin-bottom: rem(70px);
 	}
 	.swiper-text_lg{
 		font-size: rem(68px);
@@ -267,6 +317,7 @@ a{
 		line-height: rem(60px);
 	}
 	.btn_st-1{
+		margin-bottom: 10px;
 		font-size: rem(15px);
 		padding: rem(9px) rem(30px);
 		color: #fff;
@@ -364,13 +415,6 @@ $s-about__icon: rem(125px);
 
 .s-quote{
 	background: #fff url(../img/bg2.jpg) center no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	min-height: rem(700px);
-	@include overlay(#000, .75);
-	.container{
-		@include vert-align;
-	}
 }
 .s-quote__content{
 	text-align: center;
@@ -480,16 +524,9 @@ $s-about__icon: rem(125px);
 =============================================*/
 .s-facts{
 	background: #fff url(../img/bg2.jpg) center no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	min-height: rem(700px);
-	text-align: center;
-	@include overlay(#000, .75);
-	.container{
-		@include vert-align;
-	}
 }
 .s-quote__grid-item{
+	text-align: center;
 	.text{
 		margin-top: rem(22px);
 		color: #fff;
@@ -625,13 +662,6 @@ $s-about__icon: rem(125px);
 ===================================================*/
 .s-testimonial{
 	background: #fff url(../img/bg2.jpg) center no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	min-height: rem(700px);
-	@include overlay(#000, .75);
-	.container{
-		@include vert-align;
-	}
 }
 .s-testimonial__content{
 	text-align: center;
@@ -829,13 +859,6 @@ $s-about__icon: rem(125px);
 =============================================*/
 .s-tweet{
 	background: #fff url(../img/bg2.jpg) center no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	min-height: rem(700px);
-	@include overlay(#000, .75);
-	.container{
-		@include vert-align;
-	}
 }
 .s-tweet__content{
 	text-align: center;
@@ -937,13 +960,6 @@ $s-about__icon: rem(125px);
 ===============================================*/
 .s-clients{
 	background: #fff url(../img/bg2.jpg) center no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	min-height: rem(700px);
-	@include overlay(#000, .75);
-	.container{
-		@include vert-align;
-	}
 }
 .s-clients__content{
 	h3{
@@ -1064,7 +1080,8 @@ $s-about__icon: rem(125px);
 ===========================================*/
 .s-map{
 	width: 100%;
-	height: 600px;
+	margin-top: rem(60px);
+	height: rem(600px);
 }
 /*=====  End of Section comment MAP  ======*/
 
