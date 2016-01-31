@@ -219,6 +219,27 @@ a{
 	right: 0;
 	z-index: 100;
 }
+.main-header_fixed{
+	transition: all .5s;
+	position: fixed;
+	padding: 10px 0;
+	background-color: rgba(7, 25, 41, 0.86);
+	.main-header__logo{
+		height: auto;
+		border: none;
+		margin-top: 0;
+		h1{
+			line-height: 1em;
+		}
+	}
+	.main-header__nav{
+		padding-top: 7px;
+	}
+	.nav__btn-open{
+		padding-top: 0;
+	}
+}
+
 .main-header__logo{
 	float: left;
 	margin-top: 30px;
@@ -242,13 +263,13 @@ a{
 
 .nav__btn-open{
 	float: right;
-	margin-top: 63px;
+	padding-top: 63px;
 	display: none;
-	font-size: 50px;
+	font-size: rem(45px);
 	color: #fff;
 }
 .main-header__nav{
-	margin-top: 86px;
+	padding-top: 86px;
 	ul{
 		margin: 0;
 		padding: 0;
@@ -435,7 +456,13 @@ $s-about__icon: rem(125px);
 	}
 	.skills{
 		height: rem(10px);
-		background-image: linear-gradient(to right, #f39c12 0%, #f39c12 88%, #e6e6e6 88%, #e6e6e6 100%);
+		background-color: #ddd;
+		position: relative;
+		div{
+			height: 100%;
+			width: 0;
+			background-color: $color-st-1;
+		}
 	}
 }
 /*=====  End of Section comment ABOUT  ======*/
@@ -573,7 +600,7 @@ $s-about__icon: rem(125px);
 		padding-top: rem(200px);
 	}
 }
-.s-quote__grid-item{
+.s-facts__grid-item{
 	text-align: center;
 	.text{
 		margin-top: rem(22px);
@@ -1064,11 +1091,10 @@ $s-about__icon: rem(125px);
 		position: relative;
 		&:after{
 			position: absolute;
-			top: 0;
+			top: 13px;
 			right: 25px;
 			display: block;
 			font-size: 18px;
-			line-height: rem(40px);
 			color: $color-st-1;
 			font-family: fontello;
 		}
@@ -1086,8 +1112,7 @@ $s-about__icon: rem(125px);
 		width: 100%;
 		border: 2px solid #d9d9d9;
 		background-color: #fff;
-		line-height: rem(40px);
-		padding: 0 60px 0 20px;
+		padding: 13px 60px 13px 20px;
 		font-size: 15px;
 		&:focus {
 			outline: none;

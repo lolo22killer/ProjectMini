@@ -23,7 +23,8 @@
     "jquery-validation": "latest",
     "bootstrap": "latest",
     "fancybox": "fancyBox#~2.1.5",
-    "tooltipster": "~3.3.0"
+    "tooltipster": "~3.3.0",
+    "imagesloaded": "~4.1.0"
   },
   "overrides": {},
   "devDependencies": {}

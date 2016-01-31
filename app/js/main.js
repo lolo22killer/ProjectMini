@@ -1,5 +1,27 @@
 $(function () {
 
+		var $window =             	$(window),
+				$body =               	$('body'),
+				$html =               	$('html'),
+				$mainHeader =         	$('.main-header'),
+				$mainHeaderNav =      	$mainHeader.find(".main-header__nav"),
+				$navBtnOpen =         	$mainHeader.find(".nav__btn-open"),
+				$navBtnClose =        	$mainHeaderNav.find('.nav__btn-close'),
+
+				$aboutSection =       	$('.s-about__skills'),
+				$aboutPrBarNum =      	$aboutSection.find('.num'),
+				$aboutPrBarProgress = 	$aboutSection.find('.progress'),
+
+				$faсtsSection =       	$(".s-facts"),
+				$faсtsNum =           	$faсtsSection.find('.s-facts__grid-item .num'),
+
+				$portfSwiperContainer = $('.s-portf .swiper-container-h'),
+
+				BREAKPOINT = 991,
+				SCROLL_Y_MENU_VISIBL = 500,
+				SCROLL_Y_FACTS,
+				SCROLL_Y_ABOUT;
+
 		/*----------  Subsection comment swiper  ----------*/
 
 		var swiper = new Swiper('.s-banner .swiper-container', {
@@ -41,16 +63,22 @@ $(function () {
 		});
 
 		/*----------  Subsection height vertical slider  ----------*/
-		function swiperContainerHeight() {
-			$('.s-portf .swiper-container-h').css({height: $('.s-portf .swiper-container-v').find('img').height()});
-		}
-		swiperContainerHeight();
 
+		function swiperContainerHeight() {
+			$portfSwiperContainer.css({height: $('.s-portf .swiper-container-v').find('img').height()});
+		}
+
+		$portfSwiperContainer.imagesLoaded( function() {
+			swiperContainerHeight();
+		});
 
 		/*----------  Subsection comment isotope  ----------*/
 
-		var $grid = $('.s-portf__isotope-grid').isotope({
-			itemSelector: '.grid-item'
+		var $grid = $('.s-portf__isotope-grid').imagesLoaded( function() {
+			$grid.isotope({
+				itemSelector: '.grid-item',
+				layoutMode: 'fitRows'
+			});
 		});
 
 		$('.s-portf__isotope-filter').on( 'click', 'li', function() {
@@ -116,29 +144,20 @@ $(function () {
 
 		/*----------  Subsection comment menu  ----------*/
 
-		var $mainHeaderNav = $(".main-header__nav"),
-				$NavBtnOpen = $(".nav__btn-open"),
-				$NavBtnClose = $mainHeaderNav.find('.nav__btn-close');
-
 
 		// Visibility main nav
-		$NavBtnOpen.click(function(event) {
+		$navBtnOpen.click(function(event) {
 			$mainHeaderNav.removeClass('mobile-off').addClass('mobile-in');
 			return false;
 		});
 		// Hidden main nav
-		$NavBtnClose.click(function(event) {
+		$navBtnClose.click(function(event) {
 			$mainHeaderNav.removeClass('mobile-in').addClass('mobile-off');
 			return false;
 		});
 
 
-
-
-
-
 		$(document).click(function(event) {
-
 			// Hidden main nav
 			if( $mainHeaderNav.hasClass('mobile-in') ){
 				if( $(event.target).closest($mainHeaderNav).length ) {
@@ -150,9 +169,7 @@ $(function () {
 		});
 
 
-/*----------  Subsection comment resize window  ----------*/
-		var $window = $(window),
-				BREAKPOINT = 991;
+
 
 		function mobile (){
 			if($window.width() > BREAKPOINT){
@@ -162,13 +179,82 @@ $(function () {
 		mobile();
 
 
+		function sectionOffeset  () {
+			if($faсtsSection.length){ SCROLL_Y_FACTS = $faсtsSection.offset().top; }
+			if($aboutSection.length){ SCROLL_Y_ABOUT = $aboutSection.offset().top; }
+		}
+		sectionOffeset();
+
+
+
+		/*----------  Subsection comment RESIZE  ----------*/
 		$window.resize(function(){
 			swiperContainerHeight();
 			mobile();
+			sectionOffeset();
 		});
 
 
 
 
+		$window.scroll(function(event) {
+
+			// фиксированное меню
+			if ( $body.scrollTop() > SCROLL_Y_MENU_VISIBL || $html.scrollTop() > SCROLL_Y_MENU_VISIBL){
+				$mainHeader.addClass('main-header_fixed');
+			}
+			else{
+				$mainHeader.removeClass('main-header_fixed');
+			}
+
+
+
+			//анимированный прогрессбар
+			if ( $body.scrollTop() > SCROLL_Y_ABOUT || $html.scrollTop() > SCROLL_Y_ABOUT ){
+				// alert(1);
+				$aboutPrBarNum.each(function() {
+					var $this = $(this),
+					number = $this.attr('data-progressbar');
+
+					$this.animate(
+						{ num: number },
+						{
+							duration: 3000,
+							step: function (num) {
+								$this.text( (num).toFixed(0) + '%' )
+							}
+						}
+					);
+				});
+				$aboutPrBarProgress.each(function() {
+					var $this = $(this),
+					number = $this.attr('data-progressbar');
+
+					$this.animate({ width: number + '%' }, 3000);
+				});
+			}
+
+
+
+			// Анимированные числа
+			if ( $body.scrollTop() > SCROLL_Y_FACTS || $html.scrollTop() > SCROLL_Y_FACTS ){
+
+				$faсtsNum.each(function() {
+					var $this = $(this),
+					number = $this.attr('data-number');
+
+					$this.animate(
+						{ num: number },
+						{
+							duration: 3000,
+							step: function (num) {
+								$this.text( (num).toFixed(0) )
+							}
+						}
+					);
+				});
+			}
+
+		});
 });
 
