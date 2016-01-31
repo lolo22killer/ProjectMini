@@ -1,4 +1,3 @@
-
 $(function () {
 
 		/*----------  Subsection comment swiper  ----------*/
@@ -115,10 +114,61 @@ $(function () {
 		});
 
 
+		/*----------  Subsection comment menu  ----------*/
+
+		var $mainHeaderNav = $(".main-header__nav"),
+				$NavBtnOpen = $(".nav__btn-open"),
+				$NavBtnClose = $mainHeaderNav.find('.nav__btn-close');
+
+
+		// Visibility main nav
+		$NavBtnOpen.click(function(event) {
+			$mainHeaderNav.removeClass('mobile-off').addClass('mobile-in');
+			return false;
+		});
+		// Hidden main nav
+		$NavBtnClose.click(function(event) {
+			$mainHeaderNav.removeClass('mobile-in').addClass('mobile-off');
+			return false;
+		});
+
+
+
+
+
+
+		$(document).click(function(event) {
+
+			// Hidden main nav
+			if( $mainHeaderNav.hasClass('mobile-in') ){
+				if( $(event.target).closest($mainHeaderNav).length ) {
+					return;
+				}
+				$mainHeaderNav.removeClass('mobile-in').addClass('mobile-off');
+			}
+			event.stopPropagation();
+		});
+
+
 /*----------  Subsection comment resize window  ----------*/
-		$(window).resize(function(){
+		var $window = $(window),
+				BREAKPOINT = 991;
+
+		function mobile (){
+			if($window.width() > BREAKPOINT){
+				$mainHeaderNav.removeClass('mobile-in mobile-off');
+			}
+		}
+		mobile();
+
+
+		$window.resize(function(){
 			swiperContainerHeight();
-		})
+			mobile();
+		});
+
+
+
 
 });
 

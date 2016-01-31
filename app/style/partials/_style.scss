@@ -214,13 +214,14 @@ a{
 
 .main-header{
 	position: absolute;
-	top: rem(85px);
+	top: 0;
 	left: 0;
 	right: 0;
 	z-index: 100;
 }
 .main-header__logo{
 	float: left;
+	margin-top: 30px;
 	width: rem(150px);
 	height: rem(150px);
 	border-radius: 50%;
@@ -234,10 +235,20 @@ a{
 		font-family: Montserrat;
 		font-weight: bold;
 	}
+	a{
+		color: #fff;
+	}
 }
 
-.main-header__nav{
+.nav__btn-open{
+	float: right;
 	margin-top: 63px;
+	display: none;
+	font-size: 50px;
+	color: #fff;
+}
+.main-header__nav{
+	margin-top: 86px;
 	ul{
 		margin: 0;
 		padding: 0;
@@ -262,6 +273,22 @@ a{
 			color: $gray-dark;
 		}
 	}
+	.nav__btn-close{
+		display: none;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 50px;
+		color: $color-st-1;
+	}
+}
+.main-header__nav.mobile-in{
+	visibility: visible;
+	transform: translateX(0%);
+	transition: all .3s;
+}
+.main-header__nav.mobile-off{
+	transition: all .3s;
 }
 /*=====  End of Section comment HEADER  ======*/
 
@@ -850,7 +877,7 @@ $s-about__icon: rem(125px);
 		height: 100%;
 	}
 	.back{
-		@include vert-align;
+		@include c-align;
 		width: 98px;
 		height: 98px;
 		background-color: rgba(243, 156, 18, 0.5);

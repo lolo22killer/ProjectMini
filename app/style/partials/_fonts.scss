@@ -56,7 +56,7 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-
+.icon-menu:before { content: '\e808'; } /* '' */
 .icon-mail:before { content: '\e800'; } /* '' */
 .icon-lightbulb:before { content: '\e801'; } /* '' */
 .icon-params:before { content: '\e802'; } /* '' */

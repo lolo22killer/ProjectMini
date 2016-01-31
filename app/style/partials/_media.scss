@@ -57,7 +57,8 @@
 		height: rem(900px);
 	}
 }
-@media (max-width: 992px) {
+
+@media (max-width: 991px) {
 	html{
 		font-size: 14px;
 	}
@@ -93,12 +94,49 @@
 	.s-portf__isotope-grid {
 		margin-top: 2rem;
 	}
-
-
 	.s-contact__b-info{
 		margin-top: rem(35px);
 	}
 
+
+	.nav__btn-open{
+		display: block;
+	}
+	.main-header__nav{
+		visibility: hidden;
+    transform: translateX(100%);
+		background: #07090c;
+		width: 400px;
+		border-top: 4px solid $color-st-1;
+		color: #fff;
+		height: 100vh;
+		max-width: 80%;
+		overflow-y: auto;
+		position: fixed;
+		top: 0;
+		right: 0;
+		margin-top: 0;
+		ul{
+			padding: 60px 10px 0 10px;
+		}
+		li{
+			display: block;
+			padding: 15px 0;
+			text-align: center;
+			&:not(:last-child):after{
+				content: "";
+				padding: 0;
+			}
+		}
+		a{
+			&:hover{
+				color: $color-st-1;
+			}
+		}
+		.nav__btn-close{
+			display: block;
+		}
+	}
 }
 
 @media (max-width: 768px) {
